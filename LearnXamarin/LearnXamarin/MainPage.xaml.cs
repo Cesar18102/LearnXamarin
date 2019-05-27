@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using LearnXamarin.Pages;
 
 namespace LearnXamarin
 {
@@ -16,6 +17,19 @@ namespace LearnXamarin
         public MainPage()
         {
             InitializeComponent();
+
+            SignUpButton.Clicked += SignUpButton_Clicked;
+            LogInButton.Clicked += LogInButton_Clicked;
+        }
+
+        private void LogInButton_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new LogInPage();
+        }
+
+        private void SignUpButton_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new SignUpPage();
         }
     }
 }

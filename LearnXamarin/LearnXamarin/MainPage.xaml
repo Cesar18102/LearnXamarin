@@ -4,11 +4,28 @@
              xmlns:local="clr-namespace:LearnXamarin"
              x:Class="LearnXamarin.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style x:Key="MainMenuButton" BasedOn="{StaticResource SegoeButton}" TargetType="Button">
+                <Setter Property="FontSize" Value="32"/>
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            
+            <Style x:Key="MainPageGrid" TargetType="Grid">
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Margin" Value="25,25,25,25"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Style="{StaticResource Background}">
+        <Grid Style="{StaticResource MainPageGrid}">
+            <Button x:Name="SignUpButton" Text="Sign Up" Grid.Row="0" Grid.Column="0" Style="{StaticResource MainMenuButton}"/>
+            <Button x:Name="LogInButton" Text="Log In" Grid.Row="1" Grid.Column="0" Style="{StaticResource MainMenuButton}"/>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

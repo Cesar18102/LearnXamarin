@@ -3,6 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LearnXamarin.App">
     <Application.Resources>
+        
+        <OnPlatform x:Key="SegoePrint" x:TypeArguments="x:String" Android="Fonts/segoeprb.ttf#Segoe Print"/>
+                       
+        <Style x:Key="Background" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="Bisque"/>
+        </Style>
+        
+        <Style x:Key="Required" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style x:Key="Button" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Coral"/>
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
+
+        <Style x:Key="SegoeButton" BasedOn="{StaticResource Button}" TargetType="Button">
+            <Setter Property="FontFamily" Value="{StaticResource SegoePrint}"/>
+        </Style>
 
     </Application.Resources>
 </Application>

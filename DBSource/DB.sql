@@ -1,0 +1,41 @@
+CREATE TABLE Users(
+  	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  	login VARCHAR(20) NOT NULL,
+    password_md5 CHAR(32) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Lesson(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    title TEXT NOT NULL
+);
+
+CREATE TABLE Theory(
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    text TEXT NOT NULL,
+    lesson_id INTEGER NOT NULL,
+    task_num INTEGER NOT NULL DEFAULT -1,
+    FOREIGN KEY(lesson_id) REFERENCES Lesson(id)
+);
+
+CREATE TABLE Test(
+  	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    text TEXT NOT NULL,
+    lesson_id INTEGER NOT NULL,
+    FOREIGN KEY(lesson_id) REFERENCES Lesson(id)
+);
+
+CREATE TABLE Variants(
+  	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    text TEXT NOT NULL,
+    test_id INTEGER NOT NULL,
+    is_right BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY(test_id) REFERENCES Test(id)
+);
+
+CREATE TABLE User_Test(
+  	user_id INTEGER NOT NULL,
+    test_id INTEGER NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES Users(id),
+    FOREIGN KEY(test_id) REFERENCES Test(id)
+);

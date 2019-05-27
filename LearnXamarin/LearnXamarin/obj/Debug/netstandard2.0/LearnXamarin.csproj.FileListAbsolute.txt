@@ -1,0 +1,14 @@
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\bin\Debug\netstandard2.0\LearnXamarin.deps.json
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\bin\Debug\netstandard2.0\LearnXamarin.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\bin\Debug\netstandard2.0\LearnXamarin.pdb
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.csprojAssemblyReference.cache
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.csproj.CoreCompileInputs.cache
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.AssemblyInfoInputs.cache
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.AssemblyInfo.cs
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.pdb
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\SignUpPage.xaml.g.cs
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\LogInPage.xaml.g.cs
