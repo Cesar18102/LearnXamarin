@@ -216,6 +216,11 @@ C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\ob
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.Web.Services.pdb
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.Xml.Linq.pdb
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.Xml.pdb
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\bin\Debug\Autofac.pdb
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\linksrc\Autofac.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\linksrc\Autofac.pdb
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\Autofac.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\Autofac.pdb
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\machine.config
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\stamp\_CompileToDalvik.stamp
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp

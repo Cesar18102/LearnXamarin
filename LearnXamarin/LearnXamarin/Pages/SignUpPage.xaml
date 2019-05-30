@@ -8,7 +8,7 @@
 
             <Style x:Key="SignUpGrid" TargetType="Grid">
                 <Setter Property="Margin" Value="25, 25, 25, 25"/>
-                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
             </Style>
 
             <Style x:Key="LabelSegoe" TargetType="Label">
@@ -25,7 +25,7 @@
             </Style>
 
             <Style x:Key="SignUpButton" BasedOn="{StaticResource SegoeButton}" TargetType="Button">
-                <Setter Property="FontSize" Value="32"/>
+                <Setter Property="FontSize" Value="36"/>
             </Style>
 
         </ResourceDictionary>    
@@ -57,7 +57,8 @@
                 <Entry x:Name="EmailEntry" Placeholder="example@gmail.com" Grid.Row="3" Grid.Column="1" Style="{StaticResource Entry}"/>
                 <Label Text="*" Grid.Row="3" Grid.Column="2" Style="{StaticResource Required}" />
 
-                <Button x:Name="Send" Text="Sign Up" Grid.Row="4" Grid.ColumnSpan="3" Style="{StaticResource SegoeButton}"/>
+                <ActivityIndicator x:Name="SignupActivityIndicator" Grid.Row="4" Grid.ColumnSpan="3" IsRunning="False" Style="{StaticResource ActivityIndicator}"/>
+                <Button x:Name="Send" Text="Sign Up" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource SegoeButton}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

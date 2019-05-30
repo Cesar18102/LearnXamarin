@@ -5,7 +5,8 @@
     <Application.Resources>
         
         <OnPlatform x:Key="SegoePrint" x:TypeArguments="x:String" Android="Fonts/segoeprb.ttf#Segoe Print"/>
-                       
+        <Color x:Key="RedBrown">#CC0000</Color>
+        
         <Style x:Key="Background" TargetType="StackLayout">
             <Setter Property="BackgroundColor" Value="Bisque"/>
         </Style>
@@ -22,6 +23,11 @@
 
         <Style x:Key="SegoeButton" BasedOn="{StaticResource Button}" TargetType="Button">
             <Setter Property="FontFamily" Value="{StaticResource SegoePrint}"/>
+        </Style>
+
+        <Style x:Key="ActivityIndicator" TargetType="ActivityIndicator">
+            <Setter Property="Color" Value="{StaticResource RedBrown}"/>
+            <Setter Property="HorizontalOptions" Value="Center"></Setter>
         </Style>
 
     </Application.Resources>

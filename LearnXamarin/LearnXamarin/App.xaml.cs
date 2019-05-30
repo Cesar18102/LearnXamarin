@@ -1,15 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using LearnXamarin.Models;
 
 namespace LearnXamarin
 {
     public partial class App : Application
     {
+        public static User CurrentUser { get; set; }
+
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 

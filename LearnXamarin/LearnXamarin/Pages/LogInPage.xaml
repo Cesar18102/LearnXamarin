@@ -2,9 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LearnXamarin.Pages.LogInPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="SignUpGrid" TargetType="Grid">
+                <Setter Property="Margin" Value="25, 25, 25, 25"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            </Style>
+
+            <Style x:Key="LabelSegoe" TargetType="Label">
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="{StaticResource SegoePrint}"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+
+            <Style x:Key="Entry" TargetType="Entry">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <Style x:Key="SignUpButton" BasedOn="{StaticResource SegoeButton}" TargetType="Button">
+                <Setter Property="FontSize" Value="36"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            
+        <StackLayout Style="{StaticResource Background}">
+            <Grid Style="{StaticResource SignUpGrid}">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="55*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="LoginLabel" Text="Login: " Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSegoe}" />
+                <Entry x:Name="LoginEntry" Placeholder="nickname" Grid.Row="0" Grid.Column="1" Text="cesar" Style="{StaticResource Entry}" />
+
+                <Label x:Name="PasswordLabel" Text="Password: " Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSegoe}"/>
+                <Entry x:Name="PasswordEntry" IsPassword="True" Grid.Row="1" Grid.Column="1" Text="11111111" Style="{StaticResource Entry}"/>
+
+                <ActivityIndicator x:Name="LoginActivityIndicator" Grid.Row="3" IsRunning="False" Grid.ColumnSpan="2" Style="{StaticResource ActivityIndicator}"/>
+                <Button x:Name="Send" Text="Log In" Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource SegoeButton}"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,26 +4,129 @@ using System.Text;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LearnXamarin.DB
 {
     public class DbContext
     {
         private const string QUERY_PATH = "http://learnxamarin.zzz.com.ua/query_select.php";
-        private static UTF8Encoding UTF8 = new UTF8Encoding();
-        private const string HASH = "27052019";
+        private const string Code = "27052019";
 
-        public static List<T> Select<T>() where T : IDbParsable, new()
+        /// <summary>
+        /// Selects all records from spcified table
+        /// </summary>
+        private static List<T> Select<T>() where T : IDbParsable, new()
         {
             string sqlQuery = $"SELECT * FROM {new T().TableName}";
-            string query = $"hash={HASH}&query={sqlQuery}";
-            byte[] queryData = UTF8.GetBytes(query);
+            string JSONResponse = SendQuery(sqlQuery, QUERY_PATH);
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(QUERY_PATH);
+            return JsonConvert.DeserializeObject<List<T>>(JSONResponse);
+        }
+
+        /// <summary>
+        /// Async version of simple select
+        /// </summary>
+        public static async Task<List<T>> SelectAsync<T>() where T : IDbParsable, new()
+        {
+            return await Task.Run(() => Select<T>());
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Selects records from specified table according to some constraints
+        /// </summary>
+        private static List<T> Select<T>(params Predicate<T>[] PS) where T : IDbParsable, new()
+        {
+            List<T> All = Select<T>();
+            foreach (Predicate<T> P in PS)
+                All = All.Where(item => P(item)).ToList();
+            return All;
+        }
+
+        /// <summary>
+        /// Async version of select with constraints
+        /// </summary>
+        public static async Task<List<T>> SelectAsync<T>(params Predicate<T>[] PS) where T : IDbParsable, new()
+        {
+            return await Task.Run(() => Select<T>(PS));
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Asynchronously selects single record from specified table according to some constraints
+        /// </summary>
+        public static async Task<T> SingleAsync<T>(params Predicate<T>[] PS) where T : IDbParsable, new()
+        {
+            return await Task.Run(() => { 
+
+                List<T> R = Select<T>(PS);
+                return R.Count == 0 ? new T() : R.First();
+            });
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Actually selects only one record from specified table according to given id
+        /// </summary>
+        private static T Single<T>(int id) where T : IDbParsable, new()
+        {
+            T temp = new T();
+            string sqlQuery = $"SELECT * FROM {temp.TableName} WHERE {temp.IdFieldName}={id}";
+            string JSONResponse = SendQuery(sqlQuery, QUERY_PATH);
+
+            return JsonConvert.DeserializeObject<List<T>>(JSONResponse).SingleOrDefault();
+        }
+
+        /// <summary>
+        /// Async version of single
+        /// </summary>
+        public static async Task<T> SingleAsync<T>(int id) where T : IDbParsable, new()
+        {
+            return await Task.Run(() => Single<T>(id));
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Inserts a new record to a specified table
+        /// </summary>
+        private static void Insert<T>(T item) where T : IDbParsable, new()
+        {
+            string sqlQuery = $"INSERT INTO {item.TableName} VALUES ({String.Join(", ", item.Fields.Values.Select(O => "'" + O.ToString() + "'").ToList())})";
+            SendQuery(sqlQuery, QUERY_PATH);
+        }
+
+        /// <summary>
+        /// Async version of insert
+        /// </summary>
+        public static async Task InsertAsync<T>(T item) where T : IDbParsable, new()
+        {
+            await Task.Run(() => Insert<T>(item));
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////
+
+        /// <summary>
+        /// Http request sending method
+        /// </summary>
+        private static string SendQuery(string sqlQuery, string path)
+        {
+            string Rand = Constants.R.Next(1000, 9999).ToString();
+            string Hash = Constants.Hash(Code + Rand, Constants.UTF8, Constants.mD5);
+
+            string query = $"hash={Hash}&rand={Rand}&query={sqlQuery}";
+            byte[] queryData = Constants.UTF8.GetBytes(query);
+
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(path);
+
             request.Method = WebRequestMethods.Http.Post;
-
-            request.Headers.Add(HttpRequestHeader.ContentLength, queryData.Length.ToString());
-            request.Headers.Add(HttpRequestHeader.ContentType, "application/x-www-form-urlencoded");
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = queryData.Length;
 
             using (Stream str = request.GetRequestStream())
                 str.Write(queryData, 0, queryData.Length);
@@ -33,7 +136,7 @@ namespace LearnXamarin.DB
             using (StreamReader str = new StreamReader(response.GetResponseStream()))
                 JSONResponse = str.ReadToEnd();
 
-            return JsonConvert.DeserializeObject<List<T>>(JSONResponse);
+            return JSONResponse.Replace("\t", "");
         }
     }
 }

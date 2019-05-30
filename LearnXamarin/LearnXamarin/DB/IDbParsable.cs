@@ -7,8 +7,7 @@ namespace LearnXamarin.DB
     public interface IDbParsable
     {
         string TableName { get; }
-        List<string> FieldNames { get; }
-        Dictionary<string, string> Fields { get; }
-
+        string IdFieldName { get; }
+        Dictionary<string, object> Fields { get; }
     }
 }

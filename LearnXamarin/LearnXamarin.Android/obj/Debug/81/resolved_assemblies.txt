@@ -1,4 +1,5 @@
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\LearnXamarin.Android.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\Autofac.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\FormsViewGroup.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\Java.Interop.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\LearnXamarin.dll
