@@ -15,12 +15,16 @@ namespace LearnXamarin.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LessonListPage : ContentPage
     {
-        public static List<Lesson> Lessons = new List<Lesson>();
-
         public LessonListPage()
         {
             InitializeComponent();
+            this.Appearing += LessonListPage_Appearing;
+        }
 
+        private void LessonListPage_Appearing(object sender, EventArgs e)
+        {
+            foreach (Lesson L in App.Lessons)
+                DisplayAlert($"Lesson #{L.id}", L.title, "OK");
         }
     }
 }

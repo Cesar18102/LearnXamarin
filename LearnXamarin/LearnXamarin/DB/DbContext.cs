@@ -97,7 +97,7 @@ namespace LearnXamarin.DB
         /// </summary>
         private static void Insert<T>(T item) where T : IDbParsable, new()
         {
-            string sqlQuery = $"INSERT INTO {item.TableName} VALUES ({String.Join(", ", item.Fields.Values.Select(O => "'" + O.ToString() + "'").ToList())})";
+            string sqlQuery = $"INSERT INTO {item.TableName} VALUES ({string.Join(", ", item.Fields.Values.Select(O => "'" + O.ToString() + "'").ToList())})";
             SendQuery(sqlQuery, QUERY_PATH);
         }
 

@@ -8,10 +8,10 @@ namespace LearnXamarin.Models
 {
     public class Theory : ITask
     {
-        public Int32 id { get; set; }
-        public String text { get; set; }
-        public Int32 lesson_id { get; set; }
-        public Int32 task_num { get; set; }
+        public int id { get; set; }
+        public string text { get; set; }
+        public int lesson_id { get; set; }
+        public int task_num { get; set; }
 
         public Theory() { }
 
@@ -33,5 +33,9 @@ namespace LearnXamarin.Models
             }
         }
 
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

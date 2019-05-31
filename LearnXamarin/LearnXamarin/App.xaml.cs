@@ -11,11 +11,15 @@ namespace LearnXamarin
     public partial class App : Application
     {
         public static User CurrentUser { get; set; }
+        public static LessonLibrary Lessons { get; private set; }
 
         public App()
         {
             InitializeComponent();
             MainPage = new MainPage();
+
+            Lessons = new LessonLibrary();
+            Lessons.Load();
         }
 
         protected override void OnStart()

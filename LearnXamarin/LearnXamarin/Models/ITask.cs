@@ -6,11 +6,11 @@ using LearnXamarin.DB;
 
 namespace LearnXamarin.Models
 {
-    public interface ITask : IDbParsable
+    public interface ITask : IDbParsable, IComparable
     {
-        Int32 id { get; set; }
-        String text { get; set; }
-        Int32 lesson_id { get; set; }
-        Int32 task_num { get; set; }
+        int id { get; set; }
+        string text { get; set; }
+        int lesson_id { get; set; }
+        int task_num { get; set; }
     }
 }

@@ -9,21 +9,21 @@ namespace LearnXamarin.Models
 {
     public class User : IDbParsable
     {
-        public Int32 id { get; set; }
-        public String login { get; set; }
-        public String password_md5 { get; set; }
-        public String email { get; set; }
+        public int id { get; set; }
+        public string login { get; set; }
+        public string password_md5 { get; set; }
+        public string email { get; set; }
 
         private static Regex LoginPattern = new Regex("^[0-9a-zA-Z]{3,20}$");
         private static Regex PasswordPattern = new Regex("^[0-9a-zA-Z]{8,12}$");
         private static Regex EmailPattern = new Regex("^[0-9a-zA-Z_\\.]+@[a-z0-9\\-\\.]+$");
 
-        public static readonly Predicate<String> LoginValidator = new Predicate<String>(data => data != null && LoginPattern.IsMatch(data));
-        public static readonly Predicate<String> PasswordValidator = new Predicate<String>(data => data != null && PasswordPattern.IsMatch(data));
-        public static readonly Predicate<String> EmailValidator = new Predicate<String>(data => data != null && EmailPattern.IsMatch(data));
+        public static readonly Predicate<string> LoginValidator = new Predicate<string>(data => data != null && LoginPattern.IsMatch(data));
+        public static readonly Predicate<string> PasswordValidator = new Predicate<string>(data => data != null && PasswordPattern.IsMatch(data));
+        public static readonly Predicate<string> EmailValidator = new Predicate<string>(data => data != null && EmailPattern.IsMatch(data));
 
         public User() { }
-        public User(String Login, String Password, String Email, Int32 Id = Constants.IdDefault)
+        public User(string Login, string Password, string Email, int Id = Constants.IdDefault)
         {
             this.login = Login;
             this.password_md5 = Constants.Hash(Password, Constants.UTF8, Constants.mD5);

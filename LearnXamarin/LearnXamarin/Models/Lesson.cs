@@ -8,17 +8,16 @@ namespace LearnXamarin.Models
 {
     public class Lesson : IDbParsable
     {
-        public Int32 id { get; set; }
-        public String title { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
 
-        public List<ITask> Tasks = new List<ITask>();
+        private List<ITask> Tasks = new List<ITask>();
+
+        public int TasksCount { get { return Tasks.Count; } }
+        public void AddTasks(IEnumerable<ITask> TS) { Tasks.AddRange(TS); /*Tasks.Sort();*/ }
+        public ITask this[int i] { get { return i >= 0 && i < Tasks.Count ? Tasks[i] : null; } }
 
         public Lesson() { }
-
-        public void LoadTasks()
-        {
-            
-        }
 
         public string TableName { get { return "Lesson"; } }
         public string IdFieldName { get { return "id"; } }

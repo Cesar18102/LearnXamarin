@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 using LearnXamarin.DB;
@@ -8,10 +9,17 @@ namespace LearnXamarin.Models
 {
     public class Test : ITask
     {
-        public Int32 id { get; set; }
-        public String text { get; set; }
-        public Int32 lesson_id { get; set; }
-        public Int32 task_num { get; set; }
+        public int id { get; set; }
+        public string text { get; set; }
+        public int lesson_id { get; set; }
+        public int task_num { get; set; }
+
+        private List<Variant> Variants = new List<Variant>();
+
+        public int VariantsCount { get { return Variants.Count; } }
+        public int RightVariantsCount { get { return Variants.Sum(V => V.is_right ? 1 : 0); } }
+        public Variant this[int i] { get { return i >= 0 && i < Variants.Count ? Variants[i] : null; } }
+        public void AddVariants(IEnumerable<Variant> VS) { Variants.AddRange(VS); }
 
         public Test() { }
 
@@ -31,6 +39,11 @@ namespace LearnXamarin.Models
 
                 return FS;
             }
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }
