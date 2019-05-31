@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnXamarin.Pages.LessonPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="{StaticResource SegoePrint}"/>
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+
+            <Style x:Key="TaskList" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource Coral}"/>
+                <Setter Property="Padding" Value="0,0,0,20"/>
+                <Setter Property="Spacing" Value="5"/>
+            </Style>
+
+            <Style x:Key="Task" BasedOn="{StaticResource ListItemSegoe}" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackColorBisque}"/>
+            </Style>
+
+            <Style x:Key="PassedTask" BasedOn="{StaticResource Task}" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PassedColor}"/>
+            </Style>
+
+            <Style x:Key="TaskIndicatorGrid" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackColorBisque}"/>
+                <Setter Property="RowSpacing" Value="15"/>
+                <Setter Property="ColumnSpacing" Value="15"/>
+                <Setter Property="Padding" Value="10,10,10,10"/>
+            </Style>
+
+            <Style x:Key="TaskIndicator" TargetType="BoxView">
+                <Setter Property="WidthRequest" Value="25"/>
+                <Setter Property="HeightRequest" Value="25"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="PassedTaskIndicator" BasedOn="{StaticResource TaskIndicator}" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource PassedColor}"/>
+            </Style>
+
+            <Style x:Key="UnpassedTaskIndicator" BasedOn="{StaticResource TaskIndicator}" TargetType="BoxView">
+                <Setter Property="BackgroundColor" Value="{StaticResource UnpassedColor}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="TasksList" Style="{StaticResource TaskList}">
+                <Label x:Name="LessonTitle" Style="{StaticResource Title}"/>
+                <Grid x:Name="LessonProgressIndicator" Style="{StaticResource TaskIndicatorGrid}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

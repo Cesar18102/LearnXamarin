@@ -20,12 +20,8 @@
 
             <Style x:Key="Entry" TargetType="Entry">
                 <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-            </Style>
-
-            <Style x:Key="SignUpButton" BasedOn="{StaticResource SegoeButton}" TargetType="Button">
-                <Setter Property="FontSize" Value="36"/>
             </Style>
 
         </ResourceDictionary>    

@@ -2,15 +2,25 @@
 using System.Collections.Generic;
 using System.Text;
 
+using Newtonsoft.Json;
+
 using LearnXamarin.DB;
 
 namespace LearnXamarin.Models
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class Variant : IDbParsable
     {
+        [JsonProperty]
         public int id { get; set; }
+
+        [JsonProperty]
         public string text { get; set; }
+
+        [JsonProperty]
         public int test_id { get; set; }
+
+        [JsonProperty]
         public bool is_right { get; set; }
 
         public Variant() { }

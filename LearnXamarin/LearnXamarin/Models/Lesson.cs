@@ -1,21 +1,29 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+
+using Newtonsoft.Json;
 
 using LearnXamarin.DB;
 
 namespace LearnXamarin.Models
 {
-    public class Lesson : IDbParsable
+    [JsonObject(MemberSerialization.OptIn)]
+    public class Lesson : IDbParsable, IEnumerable<LessonTask>
     {
+        [JsonProperty]
         public int id { get; set; }
+
+        [JsonProperty]
         public string title { get; set; }
 
-        private List<ITask> Tasks = new List<ITask>();
-
+        private List<LessonTask> Tasks = new List<LessonTask>();
         public int TasksCount { get { return Tasks.Count; } }
-        public void AddTasks(IEnumerable<ITask> TS) { Tasks.AddRange(TS); /*Tasks.Sort();*/ }
-        public ITask this[int i] { get { return i >= 0 && i < Tasks.Count ? Tasks[i] : null; } }
+        public void AddTasks(IEnumerable<LessonTask> TS) { Tasks.AddRange(TS); Tasks.Sort(); }        
+
+        public LessonTask this[int num] { get { return Tasks.SingleOrDefault(T => T.task_num == num); } }
 
         public Lesson() { }
 
@@ -32,6 +40,30 @@ namespace LearnXamarin.Models
 
                 return FS;
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
+
+        public IEnumerator<LessonTask> GetEnumerator()
+        {
+            foreach (LessonTask T in Tasks)
+                yield return T;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (!obj.GetType().Equals(typeof(Lesson)))
+                return false;
+
+            return (obj as Lesson).id == id;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

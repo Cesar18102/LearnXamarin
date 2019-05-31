@@ -69,6 +69,19 @@ namespace LearnXamarin.DB
         }
 
         //////////////////////////////////////////////////////////////////////////////////////
+        
+        private static List<T> SelectWhere<T>(string FieldName, string FieldValue) where T : IDbParsable, new()
+        {
+            string sqlQuery = $"SELECT * FROM {new T().TableName} WHERE {FieldName}={FieldValue}";
+            string JSONResponse = SendQuery(sqlQuery, QUERY_PATH);
+
+            return JsonConvert.DeserializeObject<List<T>>(JSONResponse);
+        }
+
+        public static async Task<List<T>> SelectWhereAsync<T>(string FieldName, string FieldValue) where T : IDbParsable, new()
+        {
+            return await Task.Run(() => SelectWhere<T>(FieldName, FieldValue));
+        }
 
         /// <summary>
         /// Actually selects only one record from specified table according to given id

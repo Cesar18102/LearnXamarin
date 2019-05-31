@@ -33,9 +33,11 @@ CREATE TABLE Variants(
     FOREIGN KEY(test_id) REFERENCES Test(id)
 );
 
-CREATE TABLE User_Test(
+CREATE TABLE User_Task(
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
   	user_id INTEGER NOT NULL,
-    test_id INTEGER NOT NULL,
+    lesson_id INTEGER NOT NULL,
+    task_num INTEGER NOT NULL,
     FOREIGN KEY(user_id) REFERENCES Users(id),
-    FOREIGN KEY(test_id) REFERENCES Test(id)
+    FOREIGN KEY(lesson_id) REFERENCES Lesson(id)
 );

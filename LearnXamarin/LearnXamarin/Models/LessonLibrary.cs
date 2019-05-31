@@ -2,27 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
-
+using System.Threading.Tasks;
 using LearnXamarin.DB;
 
 namespace LearnXamarin.Models
 {
-    public class LessonLibrary : IEnumerable
+    public class LessonLibrary : IEnumerable<Lesson>
     {
-        private bool Loaded = false;
+        public Task Loading { get; private set; }
+
+        private static bool Loaded = false;
         private static List<Lesson> Lessons = new List<Lesson>();
         private static List<Theory> Theories = new List<Theory>();
         private static List<Test> Tests = new List<Test>();
         private static List<Variant> Variants = new List<Variant>();
 
-        public async void Load()
+        public void Load()
         {
             if (Loaded)
                 return;
 
             Loaded = true;
+            Loading = LoadAsync();
+        }
 
+        private async Task LoadAsync()
+        {
             Variants = await DbContext.SelectAsync<Variant>();
             Tests = await DbContext.SelectAsync<Test>();
 
@@ -39,7 +46,12 @@ namespace LearnXamarin.Models
             }
         }
 
-        public IEnumerator GetEnumerator()
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<Lesson> GetEnumerator()
         {
             foreach (Lesson L in Lessons)
                 yield return L;

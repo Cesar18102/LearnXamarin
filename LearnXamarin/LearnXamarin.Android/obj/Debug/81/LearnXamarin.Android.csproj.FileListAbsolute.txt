@@ -224,3 +224,4 @@ C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\ob
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\machine.config
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\stamp\_CompileToDalvik.stamp
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\stamp\_GeneratePackageManagerJava.stamp
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.Runtime.dll

@@ -2,9 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LearnXamarin.Pages.LessonListPage">
-    <ContentPage.Content>
-        <StackLayout>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="LessonList" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource Coral}"/>
+                <Setter Property="Padding" Value="0,20,0,20"/>
+                <Setter Property="Spacing" Value="5"/>
+            </Style>
+
+            <Style x:Key="Lesson" BasedOn="{StaticResource ListItemSegoe}" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackColorBisque}"/>
+            </Style>
             
-        </StackLayout>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="LessonsList" Style="{StaticResource LessonList}">
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

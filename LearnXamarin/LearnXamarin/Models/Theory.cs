@@ -6,19 +6,14 @@ using LearnXamarin.DB;
 
 namespace LearnXamarin.Models
 {
-    public class Theory : ITask
+    public class Theory : LessonTask
     {
-        public int id { get; set; }
-        public string text { get; set; }
-        public int lesson_id { get; set; }
-        public int task_num { get; set; }
-
         public Theory() { }
 
-        public string TableName { get { return "Theory"; } }
-        public string IdFieldName { get { return "id"; } }
+        public override string TableName { get { return "Theory"; } }
+        public override string IdFieldName { get { return "id"; } }
 
-        public Dictionary<string, object> Fields
+        public override Dictionary<string, object> Fields
         {
             get
             {
@@ -31,11 +26,6 @@ namespace LearnXamarin.Models
 
                 return FS;
             }
-        }
-
-        public int CompareTo(object obj)
-        {
-            throw new NotImplementedException();
         }
     }
 }
