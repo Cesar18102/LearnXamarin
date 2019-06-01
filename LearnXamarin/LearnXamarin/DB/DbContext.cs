@@ -83,26 +83,6 @@ namespace LearnXamarin.DB
             return await Task.Run(() => SelectWhere<T>(FieldName, FieldValue));
         }
 
-        /// <summary>
-        /// Actually selects only one record from specified table according to given id
-        /// </summary>
-        private static T Single<T>(int id) where T : IDbParsable, new()
-        {
-            T temp = new T();
-            string sqlQuery = $"SELECT * FROM {temp.TableName} WHERE {temp.IdFieldName}={id}";
-            string JSONResponse = SendQuery(sqlQuery, QUERY_PATH);
-
-            return JsonConvert.DeserializeObject<List<T>>(JSONResponse).SingleOrDefault();
-        }
-
-        /// <summary>
-        /// Async version of single
-        /// </summary>
-        public static async Task<T> SingleAsync<T>(int id) where T : IDbParsable, new()
-        {
-            return await Task.Run(() => Single<T>(id));
-        }
-
         //////////////////////////////////////////////////////////////////////////////////////
 
         /// <summary>
@@ -129,27 +109,34 @@ namespace LearnXamarin.DB
         /// </summary>
         private static string SendQuery(string sqlQuery, string path)
         {
-            string Rand = Constants.R.Next(1000, 9999).ToString();
-            string Hash = Constants.Hash(Code + Rand, Constants.UTF8, Constants.mD5);
+            try
+            {
+                string Rand = Constants.R.Next(1000, 9999).ToString();
+                string Hash = Constants.Hash(Code + Rand, Constants.UTF8, Constants.mD5);
 
-            string query = $"hash={Hash}&rand={Rand}&query={sqlQuery}";
-            byte[] queryData = Constants.UTF8.GetBytes(query);
+                string query = $"hash={Hash}&rand={Rand}&query={sqlQuery}";
+                byte[] queryData = Constants.UTF8.GetBytes(query);
 
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(path);
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(path);
 
-            request.Method = WebRequestMethods.Http.Post;
-            request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = queryData.Length;
+                request.Method = WebRequestMethods.Http.Post;
+                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentLength = queryData.Length;
 
-            using (Stream str = request.GetRequestStream())
-                str.Write(queryData, 0, queryData.Length);
+                using (Stream str = request.GetRequestStream())
+                    str.Write(queryData, 0, queryData.Length);
 
-            string JSONResponse = "";
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-            using (StreamReader str = new StreamReader(response.GetResponseStream()))
-                JSONResponse = str.ReadToEnd();
+                string JSONResponse = "";
+                using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+                using (StreamReader str = new StreamReader(response.GetResponseStream()))
+                    JSONResponse = str.ReadToEnd();
 
-            return JSONResponse.Replace("\t", "");
+                return JSONResponse.Replace("\t", "");
+            }
+            catch
+            {
+                return "[ { } ]";
+            }
         }
     }
 }

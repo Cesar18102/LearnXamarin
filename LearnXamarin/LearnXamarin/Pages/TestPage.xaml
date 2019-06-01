@@ -1,12 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              x:Class="LearnXamarin.Pages.TestPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="Title" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="{StaticResource Coral}"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="FontFamily" Value="{StaticResource SegoePrint}"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            </Style>
+
+            <Style x:Key="Text" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Margin" Value="10,10,10,10"/>
+            </Style>
+
+            <Style x:Key="TestCB" TargetType="controls:CheckBox">
+                
+            </Style>
+
+            <Style x:Key="TestRB" TargetType="controls:CustomRadioButton">
+
+            </Style>
+
+            <Style x:Key="CheckButton" BasedOn="{StaticResource SegoeButton}" TargetType="Button">
+                <Setter Property="VerticalOptions" Value="EndAndExpand"/>
+                <Setter Property="CornerRadius" Value="0"/>
+            </Style>
+
+            <Style x:Key="TestList" TargetType="StackLayout">
+                <Setter Property="Margin" Value="10,10,10,10"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="TEST"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout x:Name="Document" Style="{StaticResource Background}">
+            
+            <Label x:Name="Title" Style="{StaticResource Title}" />
+            <Label x:Name="TestText" Style="{StaticResource Text}" />
+            <ScrollView>
+                <StackLayout x:Name="Tests" Style="{StaticResource TestList}">
+                    
+                </StackLayout>
+            </ScrollView>
+            <Button x:Name="Check" Text="Check" Style="{StaticResource CheckButton}"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

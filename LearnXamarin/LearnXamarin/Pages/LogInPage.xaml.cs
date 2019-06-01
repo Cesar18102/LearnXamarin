@@ -32,8 +32,8 @@ namespace LearnXamarin.Pages
             Validators.Add(LoginEntry, E => User.LoginValidator(E.Text));
             Validators.Add(PasswordEntry, E => User.PasswordValidator(E.Text));
 
-            Alerts.Add(LoginEntry, new Constants.Alert("Input error", "Login must consist of latin letters, digits and its length must be betweeen 3 and 20", "OK", DisplayAlert));
-            Alerts.Add(PasswordEntry, new Constants.Alert("Input error", "Password must consist of latin letters, digits and its length must be betweeen 3 and 20", "OK", DisplayAlert));
+            Alerts.Add(LoginEntry, new Constants.Alert("Ошибка ввода", "Логин должен состоять из латинских букв, цифр и его длина должна находится в диапазоне от 3 до 20 символов", "OK", DisplayAlert));
+            Alerts.Add(PasswordEntry, new Constants.Alert("Ошибка ввода", "Логин должен состоять из латинских букв, цифр и его длина должна находится в диапазоне от 8 до 12 символов", "OK", DisplayAlert));
 
             LoginEntry.TextChanged += LogInEntry_TextChanged;
             PasswordEntry.TextChanged += LogInEntry_TextChanged;
@@ -68,18 +68,17 @@ namespace LearnXamarin.Pages
 
             if (User.login != Login)
             {
-                await DisplayAlert("Error", "No such user", "OK");
+                await DisplayAlert("Ощибка авторизации", "Такого пользователя нет", "OK");
                 return;
             }
 
             if(User.password_md5 != Constants.Hash(Password, Constants.UTF8, Constants.mD5))
             {
-                await DisplayAlert("Error", "Wrong password", "OK");
+                await DisplayAlert("Ошибка авторизации", "Неверный пароль", "OK");
                 return;
             }
 
             App.CurrentUser = User;
-            await DisplayAlert("Success", "Authorization successful", "OK");
             App.Current.MainPage = new LessonListPage();
         }
 

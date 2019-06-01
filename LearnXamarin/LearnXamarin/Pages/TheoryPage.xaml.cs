@@ -16,12 +16,18 @@ namespace LearnXamarin.Pages
     {
         private Theory T { get; set; }
         private Lesson L { get; set; }
+        private int TNum { get; set; }
+        private int LNum { get; set; }
 
-        public TheoryPage(Theory T, Lesson L)
+        public TheoryPage(Theory T, Lesson L, int TNum, int LNum)
         {
             InitializeComponent();
             this.T = T;
             this.L = L;
+            this.TNum = TNum;
+            this.LNum = LNum;
+            Title.Text = $"Урок #{LNum} Теория #{TNum}";
+            Text.Text = T.text;
             this.Appearing += TheoryPage_Appearing;
         }
 
@@ -32,7 +38,7 @@ namespace LearnXamarin.Pages
 
         protected override bool OnBackButtonPressed()
         {
-            App.Current.MainPage = new LessonPage(L);
+            App.Current.MainPage = new LessonPage(L, LNum);
             return true;
         }
     }

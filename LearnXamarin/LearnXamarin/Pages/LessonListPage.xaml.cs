@@ -26,13 +26,15 @@ namespace LearnXamarin.Pages
             App.Lessons.Loading.Wait();
             App.CurrentUser.LoadPassedTasks();
 
-            int i = 1;
+            int i = 0;
             foreach (Lesson L in App.Lessons)
             {
                 Button LessonEntry = new Button();
-                LessonEntry.Text = $"Lesson #{i++}: {L.title}";
+                LessonEntry.Text = $"Урок #{++i}: {L.title}";
                 LessonEntry.Style = (Style)Resources["Lesson"];
-                LessonEntry.Clicked += (context, args) => App.Current.MainPage = new LessonPage(L);
+
+                int li = i;
+                LessonEntry.Clicked += (context, args) => { App.Current.MainPage = new LessonPage(L, li); };
 
                 LessonsList.Children.Add(LessonEntry);
             }

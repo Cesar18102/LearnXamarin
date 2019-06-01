@@ -36,10 +36,10 @@ namespace LearnXamarin.Pages
             Validators.Add(ConfirmPasswordEntry, E => E.Text != null && PasswordEntry.Text != null && E.Text == PasswordEntry.Text);
             Validators.Add(EmailEntry, E => User.EmailValidator(E.Text));
 
-            Alerts.Add(LoginEntry, new Constants.Alert("Input error", "Login must consist of latin letters, digits and its length must be betweeen 3 and 20", "OK", DisplayAlert));
-            Alerts.Add(PasswordEntry, new Constants.Alert("Input error", "Password must consist of latin letters, digits and its length must be betweeen 3 and 20", "OK", DisplayAlert));
-            Alerts.Add(ConfirmPasswordEntry, new Constants.Alert("Input error", "Password confirmation failed", "OK", DisplayAlert));
-            Alerts.Add(EmailEntry, new Constants.Alert("Input error", "Email contains forbidden symbols", "OK", DisplayAlert));
+            Alerts.Add(LoginEntry, new Constants.Alert("Ошибка ввода", "Логин должен состоять из латинских букв, цифр и его длина должна находится в диапазоне от 3 до 20 символов", "OK", DisplayAlert));
+            Alerts.Add(PasswordEntry, new Constants.Alert("Ошибка ввода", "Пароль должен состоять из латинских букв, цифр и его длина должна находится в диапазоне от 8 до 12 символов", "OK", DisplayAlert));
+            Alerts.Add(ConfirmPasswordEntry, new Constants.Alert("Ошибка ввода", "Пароль не подтвержден", "OK", DisplayAlert));
+            Alerts.Add(EmailEntry, new Constants.Alert("Ошибка ввода", "Email содержит запрещенные символы", "OK", DisplayAlert));
 
             LoginEntry.TextChanged += SignUpEntry_TextChanged;
             PasswordEntry.TextChanged += SignUpEntry_TextChanged;
@@ -78,7 +78,7 @@ namespace LearnXamarin.Pages
 
             if (SameLoginUsers.Count != 0)
             {
-                await DisplayAlert("Registration error", "User with such login already exists", "OK");
+                await DisplayAlert("Ошибка регистрации", "Пользователь с таким логином уже существует", "OK");
                 SignupActivityIndicator.IsRunning = false;
                 return;
             }
@@ -87,7 +87,7 @@ namespace LearnXamarin.Pages
             await DbContext.InsertAsync<User>(U).
                             ContinueWith(T => { SignupActivityIndicator.IsRunning = false; });
 
-            await DisplayAlert("Well done", "Registration completed", "OK");
+            await DisplayAlert("Отлично", "Вы зарегистрировались!", "OK");
             App.Current.MainPage = new LogInPage();
         }
 

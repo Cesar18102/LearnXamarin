@@ -57,13 +57,17 @@
               "target": "Package",
               "version": "[12.0.2, )"
             },
+            "XLabs.Forms": {
+              "target": "Package",
+              "version": "[2.0.5782, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.0.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[3.6.0.264807, )"
+              "version": "[4.0.0.425677, )"
             }
           },
           "imports": [

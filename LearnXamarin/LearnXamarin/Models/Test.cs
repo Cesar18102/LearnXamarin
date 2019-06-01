@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using LearnXamarin.DB;
 
 namespace LearnXamarin.Models
 {
-    public class Test : LessonTask
+    public class Test : LessonTask, IEnumerable<Variant>
     {
         private List<Variant> Variants = new List<Variant>();
 
@@ -35,5 +36,13 @@ namespace LearnXamarin.Models
                 return FS;
             }
         }
+
+        public IEnumerator<Variant> GetEnumerator()
+        {
+            foreach (Variant V in Variants)
+                yield return V;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 }

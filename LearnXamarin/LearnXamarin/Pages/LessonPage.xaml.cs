@@ -15,12 +15,14 @@ namespace LearnXamarin.Pages
     public partial class LessonPage : ContentPage
     {
         private Lesson L { get; set; }
+        private int LNum { get; set; }
 
-        public LessonPage(Lesson L)
+        public LessonPage(Lesson L, int LNum)
         {
             InitializeComponent();
 
             this.L = L;
+            this.LNum = LNum;
             LessonTitle.Text = L.title;
             this.Appearing += LessonPage_Appearing;
         }
@@ -51,13 +53,15 @@ namespace LearnXamarin.Pages
 
                 if (LT is Test)
                 {
-                    TaskButton.Text = $"Practice #{++CounterTests}";
-                    TaskButton.Clicked += (context, args) => App.Current.MainPage = new TestPage((Test)LT, L);
+                    int TC = ++CounterTests;
+                    TaskButton.Text = $"Практика #{TC}";
+                    TaskButton.Clicked += (context, args) => { App.Current.MainPage = new TestPage((Test)LT, L, TC, LNum); };
                 }
                 else
                 {
-                    TaskButton.Text = $"Theory #{++CounterTheories}";
-                    TaskButton.Clicked += (context, args) => App.Current.MainPage = new TheoryPage((Theory)LT, L);
+                    int TC = ++CounterTheories;
+                    TaskButton.Text = $"Теория #{TC}";
+                    TaskButton.Clicked += (context, args) => { App.Current.MainPage = new TheoryPage((Theory)LT, L, TC, LNum); };
                 }
 
                 TasksList.Children.Add(TaskButton);

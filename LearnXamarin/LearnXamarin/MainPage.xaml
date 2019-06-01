@@ -23,8 +23,8 @@
 
     <StackLayout Style="{StaticResource Background}">
         <Grid Style="{StaticResource MainPageGrid}">
-            <Button x:Name="SignUpButton" Text="Sign Up" Grid.Row="0" Grid.Column="0" Style="{StaticResource MainMenuButton}"/>
-            <Button x:Name="LogInButton" Text="Log In" Grid.Row="1" Grid.Column="0" Style="{StaticResource MainMenuButton}"/>
+            <Button x:Name="SignUpButton" Text="Регистрация" Grid.Row="0" Grid.Column="0" Style="{StaticResource MainMenuButton}"/>
+            <Button x:Name="LogInButton" Text="Вход" Grid.Row="1" Grid.Column="0" Style="{StaticResource MainMenuButton}"/>
         </Grid>
     </StackLayout>
 

@@ -67,7 +67,7 @@ namespace LearnXamarin.Models
             }
         }
 
-        private class PassedTask : IDbParsable
+        public class PassedTask : IDbParsable
         {
             public int id { get; set; }
             public int user_id { get; set; }

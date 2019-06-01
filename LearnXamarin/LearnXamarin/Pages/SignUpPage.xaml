@@ -37,15 +37,15 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label x:Name="LoginLabel" Text="Login: " Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSegoe}" />
+                <Label x:Name="LoginLabel" Text="Логин: " Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelSegoe}" />
                 <Entry x:Name="LoginEntry" Placeholder="nickname" Grid.Row="0" Grid.Column="1" Style="{StaticResource Entry}" />
                 <Label Text="*" Grid.Row="0" Grid.Column="2" Style="{StaticResource Required}" />
 
-                <Label x:Name="PasswordLabel" Text="Password: " Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSegoe}"/>
+                <Label x:Name="PasswordLabel" Text="Пароль: " Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelSegoe}"/>
                 <Entry x:Name="PasswordEntry" IsPassword="True" Grid.Row="1" Grid.Column="1" Style="{StaticResource Entry}"/>
                 <Label Text="*" Grid.Row="1" Grid.Column="2" Style="{StaticResource Required}" />
 
-                <Label x:Name="ConfirmPasswordLabel" Text="Confirm: " Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelSegoe}"/>
+                <Label x:Name="ConfirmPasswordLabel" Text="Пароль: " Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelSegoe}"/>
                 <Entry x:Name="ConfirmPasswordEntry" IsPassword="True" Grid.Row="2" Grid.Column="1" Style="{StaticResource Entry}"/>
                 <Label Text="*" Grid.Row="2" Grid.Column="2" Style="{StaticResource Required}" />
 
@@ -54,7 +54,7 @@
                 <Label Text="*" Grid.Row="3" Grid.Column="2" Style="{StaticResource Required}" />
 
                 <ActivityIndicator x:Name="SignupActivityIndicator" Grid.Row="4" Grid.ColumnSpan="3" IsRunning="False" Style="{StaticResource ActivityIndicator}"/>
-                <Button x:Name="Send" Text="Sign Up" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource SegoeButton}"/>
+                <Button x:Name="Send" Text="Зарегистрироваться!" Grid.Row="5" Grid.ColumnSpan="3" Style="{StaticResource SegoeButton}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
