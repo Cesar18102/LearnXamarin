@@ -68,7 +68,7 @@ namespace LearnXamarin.Pages
 
             if (User.login != Login)
             {
-                await DisplayAlert("Ощибка авторизации", "Такого пользователя нет", "OK");
+                await DisplayAlert("Ощибка авторизации", "Такого пользователя нет или отсутствует подключение к Интернет", "OK");
                 return;
             }
 

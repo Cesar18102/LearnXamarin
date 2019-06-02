@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace LearnXamarin
 {
@@ -62,8 +63,9 @@ namespace LearnXamarin
         }
 
         public static bool Validate<T>(List<T> Inputs, Dictionary<T, Predicate<T>> Validators,
-                                       Dictionary<T, Constants.Alert> Alerts, 
-                                       Action<T> InvalidHandle, Action<T> ValidHandle, bool Messages) where T : new() {
+                                       Dictionary<T, Constants.Alert> Alerts,
+                                       Action<T> InvalidHandle, Action<T> ValidHandle, bool Messages) where T : new()
+        {
 
             List<T> Invalids = GetAllInvalid<T>(Validators);
             List<T> Valids = Substract<T>(Inputs, Invalids);
@@ -83,6 +85,19 @@ namespace LearnXamarin
                 ValidHandle(Valid);
 
             return Invalids.Count == 0;
+        }
+
+        public class Enumerator<T> : IEnumerator<T>
+        {
+            private List<T> Items;
+            private int index = -1;
+
+            public Enumerator(List<T> Items) => this.Items = Items;
+            public T Current { get { return Items[index]; } }
+            object IEnumerator.Current { get { return this.Current; } }
+            public bool MoveNext() => ++index < Items.Count;
+            public void Dispose() { }
+            public void Reset() => index = -1;
         }
     }
 }

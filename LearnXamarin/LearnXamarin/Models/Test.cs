@@ -37,12 +37,7 @@ namespace LearnXamarin.Models
             }
         }
 
-        public IEnumerator<Variant> GetEnumerator()
-        {
-            foreach (Variant V in Variants)
-                yield return V;
-        }
-
+        public IEnumerator<Variant> GetEnumerator() => new Constants.Enumerator<Variant>(Variants);
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 }

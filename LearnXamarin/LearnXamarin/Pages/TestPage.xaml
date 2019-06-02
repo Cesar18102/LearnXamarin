@@ -52,7 +52,7 @@
                     
                 </StackLayout>
             </ScrollView>
-            <Button x:Name="Check" Text="Check" Style="{StaticResource CheckButton}"/>
+            <Button x:Name="Check" Text="Проверить" Style="{StaticResource CheckButton}"/>
 
         </StackLayout>
     </ContentPage.Content>

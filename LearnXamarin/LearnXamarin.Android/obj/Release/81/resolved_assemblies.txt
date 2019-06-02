@@ -1,9 +1,11 @@
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\LearnXamarin.Android.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Autofac.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\ExifLib.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\FormsViewGroup.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Java.Interop.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\LearnXamarin.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Mono.Android.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Mono.Android.Export.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\mscorlib.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Newtonsoft.Json.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\System.Core.dll
@@ -36,6 +38,13 @@ C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\ob
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Xamarin.Forms.Platform.Android.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Xamarin.Forms.Platform.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\Xamarin.Forms.Xaml.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Core.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Forms.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Forms.Droid.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Ioc.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Platform.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Platform.Droid.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\XLabs.Serialization.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\System.Data.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\System.ComponentModel.Composition.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Release\81\android\assets\System.Net.Http.dll

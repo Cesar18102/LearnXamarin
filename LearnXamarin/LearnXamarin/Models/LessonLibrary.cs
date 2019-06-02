@@ -14,10 +14,10 @@ namespace LearnXamarin.Models
         public Task Loading { get; private set; }
 
         private static bool Loaded = false;
-        private static List<Lesson> Lessons = new List<Lesson>();
-        private static List<Theory> Theories = new List<Theory>();
-        private static List<Test> Tests = new List<Test>();
-        private static List<Variant> Variants = new List<Variant>();
+        private List<Lesson> Lessons = new List<Lesson>();
+        private List<Theory> Theories = new List<Theory>();
+        private List<Test> Tests = new List<Test>();
+        private List<Variant> Variants = new List<Variant>();
 
         public void Load()
         {
@@ -46,15 +46,7 @@ namespace LearnXamarin.Models
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public IEnumerator<Lesson> GetEnumerator()
-        {
-            foreach (Lesson L in Lessons)
-                yield return L;
-        }
+        public IEnumerator<Lesson> GetEnumerator() => new Constants.Enumerator<Lesson>(Lessons);
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
     }
 }

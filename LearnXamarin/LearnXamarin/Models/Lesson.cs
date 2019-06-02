@@ -42,16 +42,8 @@ namespace LearnXamarin.Models
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
-
-        public IEnumerator<LessonTask> GetEnumerator()
-        {
-            foreach (LessonTask T in Tasks)
-                yield return T;
-        }
+        public IEnumerator<LessonTask> GetEnumerator() => new Constants.Enumerator<LessonTask>(Tasks);
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
         public override bool Equals(object obj)
         {

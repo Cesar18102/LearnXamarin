@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "dbbbfe27b97c2e58919b589e8ccb8756a3b42529"
+    "signature": "55b43cdbe66b18d776129605801fb931ce34f43b"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,8 +12,9 @@
           "Autofac": "4.9.2",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
+          "XLabs.Forms": "2.0.5782",
           "Xamarin.Essentials": "1.0.1",
-          "Xamarin.Forms": "3.6.0.264807"
+          "Xamarin.Forms": "4.0.0.425677"
         },
         "runtime": {
           "LearnXamarin.dll": {}
@@ -24,6 +25,14 @@
           "lib/netstandard2.0/Autofac.dll": {
             "assemblyVersion": "4.9.2.0",
             "fileVersion": "4.9.2.0"
+          }
+        }
+      },
+      "ExifLib.PCL/1.0.1": {
+        "runtime": {
+          "lib/portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10/ExifLib.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
           }
         }
       },
@@ -60,7 +69,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.6.0.264807": {
+      "Xamarin.Forms/4.0.0.425677": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -73,6 +82,57 @@
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
             "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "XLabs.Core/2.0.5782": {
+        "runtime": {
+          "lib/portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1/XLabs.Core.dll": {
+            "assemblyVersion": "2.0.5782.12218",
+            "fileVersion": "2.0.5782.12218"
+          }
+        }
+      },
+      "XLabs.Forms/2.0.5782": {
+        "dependencies": {
+          "XLabs.Core": "2.0.5782",
+          "XLabs.IoC": "2.0.5782",
+          "XLabs.Platform": "2.0.5782",
+          "XLabs.Serialization": "2.0.5782",
+          "Xamarin.Forms": "4.0.0.425677"
+        },
+        "runtime": {
+          "lib/portable-net45+netcore45+wpa81+wp8/XLabs.Forms.dll": {
+            "assemblyVersion": "2.0.5782.12218",
+            "fileVersion": "2.0.5782.12218"
+          }
+        }
+      },
+      "XLabs.IoC/2.0.5782": {
+        "runtime": {
+          "lib/portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1/XLabs.Ioc.dll": {
+            "assemblyVersion": "2.0.5782.12218",
+            "fileVersion": "2.0.5782.12218"
+          }
+        }
+      },
+      "XLabs.Platform/2.0.5782": {
+        "dependencies": {
+          "ExifLib.PCL": "1.0.1",
+          "XLabs.Core": "2.0.5782"
+        },
+        "runtime": {
+          "lib/portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1/XLabs.Platform.dll": {
+            "assemblyVersion": "2.0.5782.12218",
+            "fileVersion": "2.0.5782.12218"
+          }
+        }
+      },
+      "XLabs.Serialization/2.0.5782": {
+        "runtime": {
+          "lib/portable-net45+netcore45+wp8+MonoAndroid1+MonoTouch1/XLabs.Serialization.dll": {
+            "assemblyVersion": "2.0.5782.15703",
+            "fileVersion": "2.0.5782.15703"
           }
         }
       }
@@ -90,6 +150,13 @@
       "sha512": "sha512-lfCcNOzU97f2WFtdo/+SkR0XtpdH20QA5Ob/T2Iv027wFMvDk7EZZ2oj6ERtWL+LBfPTOrbk9zyLj6Okx2CoHA==",
       "path": "autofac/4.9.2",
       "hashPath": "autofac.4.9.2.nupkg.sha512"
+    },
+    "ExifLib.PCL/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-16KG9oXTPJkjCRq2xQmfPfJqCfcCjK3h034oazOE61LM4kddMr50a6EgrOV+F7RtIzVVd5ATEZRCiNWnnWqDkA==",
+      "path": "exiflib.pcl/1.0.1",
+      "hashPath": "exiflib.pcl.1.0.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
@@ -126,12 +193,47 @@
       "path": "xamarin.essentials/1.0.1",
       "hashPath": "xamarin.essentials.1.0.1.nupkg.sha512"
     },
-    "Xamarin.Forms/3.6.0.264807": {
+    "Xamarin.Forms/4.0.0.425677": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T7gYS3PoGNtp6D7GAX7fF4QzR7NC36NNQSiuEb5TXO8rEqkZGwpC4u/6S62rH0wL3dabWNVpJPPnL5jZvWeoVg==",
-      "path": "xamarin.forms/3.6.0.264807",
-      "hashPath": "xamarin.forms.3.6.0.264807.nupkg.sha512"
+      "sha512": "sha512-drwO/MimaMUnmvkULASYjU5MRciVIJyiLxD3ihFq8P+DWynQZ2NLNej0Vrs3k2L7UdmqvcgCxEJdfT7uFl2KVg==",
+      "path": "xamarin.forms/4.0.0.425677",
+      "hashPath": "xamarin.forms.4.0.0.425677.nupkg.sha512"
+    },
+    "XLabs.Core/2.0.5782": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XLRztFIAjUYfjaaur4aPa/gjBNOwnAoelnmm83v4U0R5dJcWhll5Sci3s8nJWpHv1unwX1TuRsWT0rqMNm0PzA==",
+      "path": "xlabs.core/2.0.5782",
+      "hashPath": "xlabs.core.2.0.5782.nupkg.sha512"
+    },
+    "XLabs.Forms/2.0.5782": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ky3fCcqK1jaSMyIavo8g4Jb/KWhMGH7AlDzFtmP/vNNxiYWHnkmCz1kIvuBNodEwbqJgINpPUcvfW5IbBxbVYg==",
+      "path": "xlabs.forms/2.0.5782",
+      "hashPath": "xlabs.forms.2.0.5782.nupkg.sha512"
+    },
+    "XLabs.IoC/2.0.5782": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lFhk1z7pJSlwz2OnxGsZexpzrq5pmH1jvu07oX92ZZEMbJzmvlK9s76G54yE6hQwpv3DVrNtcZ4ubVT1/makRA==",
+      "path": "xlabs.ioc/2.0.5782",
+      "hashPath": "xlabs.ioc.2.0.5782.nupkg.sha512"
+    },
+    "XLabs.Platform/2.0.5782": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n5ZgLrh4Ut7EflUKmVii4feQ5xsLQTyTPYf8IDuldOi2furuxSPfHr2H4dpGTbmDxiB21sS0ZA6tdhoQQM27uA==",
+      "path": "xlabs.platform/2.0.5782",
+      "hashPath": "xlabs.platform.2.0.5782.nupkg.sha512"
+    },
+    "XLabs.Serialization/2.0.5782": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lObYD+cpUv6pnUd9IsWYj5i0sSO8EUT60KaiDKxv2VHr1oAsNC37HpWcetGezYO2nfQN5AZzVtE8ENbYOqx2Dg==",
+      "path": "xlabs.serialization/2.0.5782",
+      "hashPath": "xlabs.serialization.2.0.5782.nupkg.sha512"
     }
   }
 }
