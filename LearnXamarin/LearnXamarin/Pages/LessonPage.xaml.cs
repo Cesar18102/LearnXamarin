@@ -66,6 +66,15 @@ namespace LearnXamarin.Pages
 
                 TasksList.Children.Add(TaskButton);
             }
+
+            if(L.AttachedExam != null)
+            {
+                Button TaskButton = new Button();
+                TaskButton.Style = (Style)(Resources["Task"]);
+                TaskButton.Text = $"К/Р";
+                TaskButton.Clicked += (context, args) => { App.Current.MainPage = new ExamPage(L, LNum); };
+                TasksList.Children.Add(TaskButton);
+            }
         }
 
         protected override bool OnBackButtonPressed()

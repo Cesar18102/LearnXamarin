@@ -16,17 +16,17 @@ namespace LearnXamarin.Pages
     public partial class ExamPage : ContentPage
     {
         private Lesson L { get; set; }
-        private int ENum { get; set; }
+        private int LNum { get; set; }
 
         private Dictionary<Test, Dictionary<Variant, CustomRadioButton>> SingleAnswerTests = new Dictionary<Test, Dictionary<Variant, CustomRadioButton>>();
         private Dictionary<Test, Dictionary<Variant, CheckBox>> MultiAnswerTests = new Dictionary<Test, Dictionary<Variant, CheckBox>>();
 
-        public ExamPage(Lesson L, int ENum)
+        public ExamPage(Lesson L, int LNum)
         {
             InitializeComponent();
 
             this.L = L;
-            this.ENum = ENum;
+            this.LNum = LNum;
             ExamTitle.Text = L.title;
             this.Appearing += ExamPage_Appearing;
             this.FinishButton.Clicked += FinishButton_Clicked;
@@ -35,7 +35,7 @@ namespace LearnXamarin.Pages
         private void ExamPage_Appearing(object sender, EventArgs e)
         {
             int row = 0;
-            foreach (LessonTask LTask in L)
+            foreach (LessonTask LTask in L.AttachedExam)
             {
                 if (!LTask.GetType().Equals(typeof(Test)))
                     continue;
@@ -95,8 +95,8 @@ namespace LearnXamarin.Pages
 
         private void FinishButton_Clicked(object sender, EventArgs e)
         {
-            foreach (LessonTask LT in L)
-                App.CurrentUser.Pass(L, LT);
+            foreach (LessonTask LT in L.AttachedExam)
+                App.CurrentUser.Pass(L.AttachedExam, LT);
 
             int rightCount = 0;
             foreach (KeyValuePair<Test, Dictionary<Variant, CustomRadioButton>> singleAnswerTestAnswers in SingleAnswerTests)
@@ -120,7 +120,7 @@ namespace LearnXamarin.Pages
 
         protected override bool OnBackButtonPressed()
         {
-            App.Current.MainPage = new LessonListPage();
+            App.Current.MainPage = new LessonPage(L, LNum);
             return true;
         }
     }

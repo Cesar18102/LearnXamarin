@@ -28,19 +28,18 @@ namespace LearnXamarin.Pages
 
             ChangePasswordButton.Clicked += (context, args) => App.Current.MainPage = new ChangePasswordPage();
 
-            int i = 0, ei = 0;
+            int i = 0;
             foreach (Lesson L in App.Lessons)
             {
+                if (L.is_exam)
+                    continue;
+
                 Button LessonEntry = new Button();
-                LessonEntry.Text = L.is_exam ? $"К/Р #{++ei}: {L.title}" : $"Урок #{++i}: {L.title}";
+                LessonEntry.Text = $"Урок #{++i}: {L.title}";
                 LessonEntry.Style = (Style)Resources["Lesson"];
 
-                int li = L.is_exam ? ei : i;
-
-                if (L.is_exam)
-                    LessonEntry.Clicked += (context, args) => { App.Current.MainPage = new ExamPage(L, li); };
-                else
-                    LessonEntry.Clicked += (context, args) => { App.Current.MainPage = new LessonPage(L, li); };
+                int li = i;
+                LessonEntry.Clicked += (context, args) => { App.Current.MainPage = new LessonPage(L, li); };
 
                 LessonsList.Children.Add(LessonEntry);
             }

@@ -39,10 +39,12 @@ namespace LearnXamarin.Models
             Theories = await DbContext.SelectAsync<Theory>();
             Lessons = await DbContext.SelectAsync<Lesson>();
 
-            foreach (Lesson L in Lessons)
-            {
-                L.AddTasks(Theories.Where(T => T.lesson_id == L.id));
-                L.AddTasks(Tests.Where(T => T.lesson_id == L.id));
+            for (int i = 0; i < Lessons.Count; i++) {
+                Lessons[i].AddTasks(Theories.Where(T => T.lesson_id == Lessons[i].id));
+                Lessons[i].AddTasks(Tests.Where(T => T.lesson_id == Lessons[i].id));
+
+                if (Lessons[i].is_exam)
+                    Lessons[i - 1].AttachedExam = Lessons[i];
             }
         }
 

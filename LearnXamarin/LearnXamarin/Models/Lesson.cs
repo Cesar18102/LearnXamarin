@@ -22,6 +22,7 @@ namespace LearnXamarin.Models
         [JsonProperty]
         public bool is_exam { get; set; }
 
+        public Lesson AttachedExam { get; set; }
         private List<LessonTask> Tasks = new List<LessonTask>();
         public int TasksCount { get { return Tasks.Count; } }
         public void AddTasks(IEnumerable<LessonTask> TS) { Tasks.AddRange(TS); Tasks.Sort(); }        
