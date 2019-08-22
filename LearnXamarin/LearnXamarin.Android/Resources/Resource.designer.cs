@@ -26,6 +26,8 @@ namespace LearnXamarin.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::OpenGL.Resource.String.ApplicationName = global::LearnXamarin.Droid.Resource.String.ApplicationName;
+			global::OpenGL.Resource.String.Hello = global::LearnXamarin.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::LearnXamarin.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::LearnXamarin.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::LearnXamarin.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;

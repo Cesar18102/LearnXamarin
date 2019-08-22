@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "55b43cdbe66b18d776129605801fb931ce34f43b"
+    "signature": "91169fb83ffa8d9dfe151a59e1af47c55dee2e4b"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,8 +13,8 @@
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.2",
           "XLabs.Forms": "2.0.5782",
-          "Xamarin.Essentials": "1.0.1",
-          "Xamarin.Forms": "4.0.0.425677"
+          "Xamarin.Essentials": "1.1.0",
+          "Xamarin.Forms": "4.0.0.497661"
         },
         "runtime": {
           "LearnXamarin.dll": {}
@@ -58,7 +58,7 @@
           }
         }
       },
-      "Xamarin.Essentials/1.0.1": {
+      "Xamarin.Essentials/1.1.0": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
         },
@@ -69,19 +69,19 @@
           }
         }
       },
-      "Xamarin.Forms/4.0.0.425677": {
+      "Xamarin.Forms/4.0.0.497661": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "fileVersion": "4.0.0.146"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "4.0.0.146"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "fileVersion": "4.0.0.146"
           }
         }
       },
@@ -99,7 +99,7 @@
           "XLabs.IoC": "2.0.5782",
           "XLabs.Platform": "2.0.5782",
           "XLabs.Serialization": "2.0.5782",
-          "Xamarin.Forms": "4.0.0.425677"
+          "Xamarin.Forms": "4.0.0.497661"
         },
         "runtime": {
           "lib/portable-net45+netcore45+wpa81+wp8/XLabs.Forms.dll": {
@@ -186,19 +186,19 @@
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
-    "Xamarin.Essentials/1.0.1": {
+    "Xamarin.Essentials/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TUsMSXqdLEZlx0O3EcWMwOF5e8X3Gh0GX28FlH3q8iyKAQBYd8tV+Ja7tHMplf7D8V4NVCG9ELqx2nk/jPWPew==",
-      "path": "xamarin.essentials/1.0.1",
-      "hashPath": "xamarin.essentials.1.0.1.nupkg.sha512"
+      "sha512": "sha512-W0XOt1dNMAE2POcsVotoKDDy5FdAOnR0qULKl6WI4kQEMxQ1sp84DsSU5iacV7oQUMuPhUBAm/3ywks0HO1QrQ==",
+      "path": "xamarin.essentials/1.1.0",
+      "hashPath": "xamarin.essentials.1.1.0.nupkg.sha512"
     },
-    "Xamarin.Forms/4.0.0.425677": {
+    "Xamarin.Forms/4.0.0.497661": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-drwO/MimaMUnmvkULASYjU5MRciVIJyiLxD3ihFq8P+DWynQZ2NLNej0Vrs3k2L7UdmqvcgCxEJdfT7uFl2KVg==",
-      "path": "xamarin.forms/4.0.0.425677",
-      "hashPath": "xamarin.forms.4.0.0.425677.nupkg.sha512"
+      "sha512": "sha512-j2dTUhcgdqb3TwFaSWnkbKwD8rgSQtEoYiW/e+sKRV24BTxMdYp24oEKIXDBvLXjlkv8Lr+DNKBrycu1gfkI2Q==",
+      "path": "xamarin.forms/4.0.0.497661",
+      "hashPath": "xamarin.forms.4.0.0.497661.nupkg.sha512"
     },
     "XLabs.Core/2.0.5782": {
       "type": "package",

@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Linq;
 
 using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace LearnXamarin.Models
 {
@@ -36,6 +37,12 @@ namespace LearnXamarin.Models
         private bool PassedTasksLoaded = false; 
         private Dictionary<Lesson, List<LessonTask>> PassedTasks = new Dictionary<Lesson, List<LessonTask>>();
         public bool IsTaskPassed(Lesson L, LessonTask LT) => PassedTasks[L].Contains(LT);
+
+        public async Task ChangePassword(string NewPasswordMD5)
+        {
+            password_md5 = NewPasswordMD5;
+            await DbContext.ChangePassword(this, NewPasswordMD5);
+        }
 
         public async void Pass(Lesson L, LessonTask LT)
         {

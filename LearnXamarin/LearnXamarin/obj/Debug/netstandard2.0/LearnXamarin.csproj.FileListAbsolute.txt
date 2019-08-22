@@ -15,4 +15,7 @@ C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\LessonPage.xaml.g.cs
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\TestPage.xaml.g.cs
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\TheoryPage.xaml.g.cs
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\LearnXamarin.csproj.ResolveComReference.cache
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\ExamPage.xaml.g.cs
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin\obj\Debug\netstandard2.0\Pages\ChangePasswordPage.xaml.g.cs

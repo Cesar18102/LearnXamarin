@@ -8,6 +8,8 @@ C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\ob
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\Mono.Android.Export.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\mscorlib.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\Newtonsoft.Json.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\OpenGL.Net.dll
+C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\OpenGL.Net.Xamarin.Android.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.Core.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.dll
 C:\Users\Олег\source\repos\LearnXamarin\LearnXamarin\LearnXamarin.Android\obj\Debug\81\android\assets\System.Numerics.dll

@@ -6,6 +6,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Linq;
 using System.Threading.Tasks;
+using LearnXamarin.Models;
 
 namespace LearnXamarin.DB
 {
@@ -103,6 +104,12 @@ namespace LearnXamarin.DB
         }
 
         //////////////////////////////////////////////////////////////////////////////////////
+        
+        public static async Task ChangePassword(User user, string newPasswordMD5)
+        {
+            string sqlQuery = $"UPDATE Users SET password_md5 = '{newPasswordMD5}' WHERE id = {user.id}";
+            await Task.Run(() => SendQuery(sqlQuery, QUERY_PATH));
+        }
 
         /// <summary>
         /// Http request sending method

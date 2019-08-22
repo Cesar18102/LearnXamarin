@@ -15,6 +15,10 @@
             <Style x:Key="Lesson" BasedOn="{StaticResource ListItemSegoe}" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource BackColorBisque}"/>
             </Style>
+
+            <Style x:Key="ChangePasswordButtonStyle" BasedOn="{StaticResource SegoeButton}" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource BackColorBisque}"/>
+            </Style>
             
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -22,7 +26,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="LessonsList" Style="{StaticResource LessonList}">
-                
+                <Button x:Name="ChangePasswordButton" Text="Изменить пароль" Style="{StaticResource ChangePasswordButtonStyle}"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
